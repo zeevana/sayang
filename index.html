@@ -23,6 +23,25 @@
       text-align: center; /* Atur teks ke tengah */
     }
 
+    #birthday-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: transparent;
+      background: linear-gradient(90deg, blue, white);
+      -webkit-background-clip: text;
+      animation: animate 5s linear infinite;
+      text-align: center; /* Atur teks ke tengah */
+    }
+
+    @keyframes animate {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
     @keyframes typing {
       from { width: 0; }
       to { width: 100%; }
@@ -41,11 +60,21 @@
       font-size: 24px; /* Ubah ukuran teks */
       animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
       margin-bottom: 20px; /* Tambah jarak antara teks dan bawah */
+      color: white; /* Ubah warna teks */
+      animation: glow 1s ease-in-out infinite alternate; /* Animasi kilap */
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white; }
+      to { text-shadow: 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white, 0 0 80px white; }
     }
   </style>
 </head>
 <body>
   <div id="container">
+    <div id="birthday-text">
+      Happy Birthday Sayang
+    </div>
     <div id="typing-text">
       Selamat ulang tahun sayang, apa yang sayang semogakan bisa terkabul. Maaf belum bisa kasih hadiahnya karena masih KKN :0
     </div>
