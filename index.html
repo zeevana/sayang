@@ -18,47 +18,37 @@
     }
 
     #text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 48px;
-      font-weight: bold;
-      color: transparent;
-      background: linear-gradient(90deg, blue, white);
-      -webkit-background-clip: text;
-      animation: animate 5s linear infinite;
-      z-index: 1;
+      font-size: 24px; /* Ubah ukuran teks */
+      color: white; /* Ubah warna teks */
+      text-align: center; /* Atur teks ke tengah */
     }
 
-    @keyframes animate {
-      0% {
-        background-position: 0% 50%;
-      }
-      100% {
-        background-position: 100% 50%;
-      }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
     }
 
-    #video {
-      position: absolute;
-      width: 40%; /* Ubah ukuran video */
-      height: auto; /* Ubah ukuran video */
-      object-fit: cover;
-      z-index: 0;
-      top: 70%; /* Atur posisi video */
-      left: 50%; /* Atur posisi video */
-      transform: translate(-50%, -50%); /* Atur posisi video */
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: white; }
+    }
+
+    #typing-text {
+      width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid white; /* Atur animasi kursor */
+      font-size: 24px; /* Ubah ukuran teks */
+      animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+      margin-bottom: 20px; /* Tambah jarak antara teks dan bawah */
     }
   </style>
 </head>
 <body>
   <div id="container">
-    <h1 id="text">Happy Birthday Sayang</h1>
-    <video id="video" autoplay muted loop>
-      <source src="https://github.com/zeevana/sayang/blob/main/6281247548820_status_0612a890be44461f9814221ceda11e67.mp4?raw=true" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <div id="typing-text">
+      Selamat ulang tahun sayang, apa yang sayang semogakan bisa terkabul. Maaf belum bisa kasih hadiahnya karena masih KKN :0
+    </div>
   </div>
 </body>
 </html>
