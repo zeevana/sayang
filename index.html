@@ -14,21 +14,21 @@
       height: 100vh;
       background-color: black;
       overflow: hidden;
-      position: relative; /* Tambahkan */
+      position: relative;
     }
 
     #text {
-      position: absolute; /* Tambahkan */
+      position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%); /* Tambahkan */
+      transform: translate(-50%, -50%);
       font-size: 48px;
       font-weight: bold;
       color: transparent;
       background: linear-gradient(90deg, blue, white);
       -webkit-background-clip: text;
       animation: animate 5s linear infinite;
-      z-index: 1; /* Tambahkan */
+      z-index: 1;
     }
 
     @keyframes animate {
@@ -42,17 +42,20 @@
 
     #video {
       position: absolute;
-      width: 50%; /* Ubah ukuran video */
-      height: 50%; /* Ubah ukuran video */
+      width: 60%; /* Ubah ukuran video */
+      height: auto; /* Ubah ukuran video */
       object-fit: cover;
-      z-index: 0; /* Tambahkan */
+      z-index: 0;
+      top: 10%; /* Atur posisi video */
+      left: 50%; /* Atur posisi video */
+      transform: translateX(-50%); /* Atur posisi video */
     }
   </style>
 </head>
 <body>
   <div id="container">
     <video id="video" autoplay muted loop>
-      <source src="https://github.com/zeevana/sayang/blob/main/6281247548820_status_0612a890be44461f9814221ceda11e67.mp4?raw=true" type="video/mp4"> <!-- Ubah URL video -->
+      <source src="https://github.com/zeevana/sayang/blob/main/6281247548820_status_0612a890be44461f9814221ceda11e67.mp4?raw=true" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <h1 id="text">Happy Birthday Sayang</h1>
