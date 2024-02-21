@@ -15,12 +15,11 @@
       background-color: black;
       overflow: hidden;
       position: relative;
+      font-family: Arial, sans-serif;
     }
 
-    #text {
-      font-size: 24px; /* Ubah ukuran teks */
-      color: white; /* Ubah warna teks */
-      text-align: center; /* Atur teks ke tengah */
+    .container {
+      text-align: center;
     }
 
     #birthday-text {
@@ -30,8 +29,17 @@
       background: linear-gradient(90deg, blue, white);
       -webkit-background-clip: text;
       animation: animate 5s linear infinite;
-      text-align: center; /* Atur teks ke tengah */
-      margin-bottom: 20px; /* Tambah jarak antara teks dan teks baru */
+      margin-bottom: 20px;
+    }
+
+    #typing-text {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 24px;
+      color: white;
+      border-right: 2px solid white;
+      animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
     }
 
     @keyframes animate {
@@ -53,32 +61,39 @@
       50% { border-color: white; }
     }
 
-    #typing-text {
-      width: 100%; /* Ubah lebar untuk memastikan teks yang baru dapat ditampilkan */
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid white; /* Atur animasi kursor */
-      font-size: 24px; /* Ubah ukuran teks */
-      animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
-      margin-bottom: 20px; /* Tambah jarak antara teks dan teks baru */
-      color: white; /* Ubah warna teks */
-      animation: glow 1s ease-in-out infinite alternate; /* Animasi kilap */
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white; }
-      to { text-shadow: 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white, 0 0 80px white; }
+    /* Aturan media queries */
+    @media only screen and (max-width: 600px) {
+      #birthday-text {
+        font-size: 18px;
+      }
+      #typing-text {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
 <body>
-  <div id="container">
+  <div class="container">
     <div id="birthday-text">
       Happy Birthday Sayang
     </div>
-    <div id="typing-text">
-      Selamat ulang tahun sayang, apa yang sayang semogakan bisa terkabul. Maaf belum bisa kasih hadiahnya karena masih KKN :0
-    </div>
+    <div id="typing-text"></div>
   </div>
+
+  <script>
+    // Script JavaScript untuk efek mengetik
+    const text = "Selamat ulang tahun sayang, apa yang sayang semogakan bisa terkabul. Maaf belum bisa kasih hadiahnya karena masih KKN :0";
+    let index = 0;
+
+    function typeWriter() {
+      if (index < text.length) {
+        document.getElementById("typing-text").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, Math.floor(Math.random() * 150) + 50); // Waktu penundaan acak antara 50ms dan 200ms
+      }
+    }
+
+    typeWriter(); // Mulai efek mengetik saat halaman dimuat
+  </script>
 </body>
 </html>
