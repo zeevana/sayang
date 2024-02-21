@@ -31,6 +31,7 @@
       -webkit-background-clip: text;
       animation: animate 5s linear infinite;
       text-align: center; /* Atur teks ke tengah */
+      margin-bottom: 20px; /* Tambah jarak antara teks dan teks baru */
     }
 
     @keyframes animate {
@@ -53,13 +54,13 @@
     }
 
     #typing-text {
-      width: 0;
+      width: 100%; /* Ubah lebar untuk memastikan teks yang baru dapat ditampilkan */
       white-space: nowrap;
       overflow: hidden;
       border-right: 2px solid white; /* Atur animasi kursor */
       font-size: 24px; /* Ubah ukuran teks */
       animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
-      margin-bottom: 20px; /* Tambah jarak antara teks dan bawah */
+      margin-bottom: 20px; /* Tambah jarak antara teks dan teks baru */
       color: white; /* Ubah warna teks */
       animation: glow 1s ease-in-out infinite alternate; /* Animasi kilap */
     }
