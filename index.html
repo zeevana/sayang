@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"> <!-- Menambahkan maximum-scale=1.0 -->
   <title>Happy Birthday Sayang</title>
   <style>
     body {
@@ -11,32 +11,34 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh; /* Menggunakan min-height agar halaman tidak zoom in/out di mode ponsel */
       background-color: black;
       overflow: hidden;
       position: relative;
-      font-family: Open Sans;
+      font-family: 'Open Sans', sans-serif; /* Menggunakan tanda kutip untuk font family yang memiliki spasi */
     }
 
     .container {
       text-align: center;
+      overflow-y: scroll; /* Menambahkan overflow-y: scroll agar teks dapat di-scroll di ponsel */
+      max-height: 80vh; /* Mengatur tinggi maksimum kontainer agar tidak melewati layar */
     }
 
     #birthday-text {
-      font-size: 60px;
+      font-size: 5vw; /* Menggunakan ukuran font relatif untuk responsivitas */
       font-weight: bold;
       color: transparent;
       background: linear-gradient(90deg, blue, white);
       -webkit-background-clip: text;
       animation: animate 5s linear infinite;
-      margin-bottom: 50px;
+      margin-bottom: 10vw; /* Menggunakan margin relatif untuk responsivitas */
     }
 
     #typing-text {
       display: inline-block;
       white-space: nowrap;
       overflow: hidden;
-      font-size: 24px;
+      font-size: 3vw; /* Menggunakan ukuran font relatif untuk responsivitas */
       color: white;
       border-right: 2px solid white;
       animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
@@ -64,10 +66,11 @@
     /* Aturan media queries */
     @media only screen and (max-width: 600px) {
       #birthday-text {
-        font-size: 48px;
+        font-size: 8vw; /* Menggunakan ukuran font relatif untuk responsivitas */
+        margin-bottom: 5vw; /* Menggunakan margin relatif untuk responsivitas */
       }
       #typing-text {
-        font-size: 18px;
+        font-size: 4vw; /* Menggunakan ukuran font relatif untuk responsivitas */
       }
     }
   </style>
