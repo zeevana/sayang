@@ -1,0 +1,27 @@
+body {
+  background-color: black;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+}
+
+.text {
+  font-size: 3em;
+  color: blue;
+  animation: colorChange 2s infinite alternate;
+}
+
+@keyframes colorChange {
+  from {
+    color: blue;
+  }
+  to {
+    color: cyan;
+  }
+}
